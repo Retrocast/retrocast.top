@@ -1,11 +1,16 @@
 ---
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
 import Head from '../components/Head.astro';
 import Navbar from '../components/Navbar.astro';
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title="Test" description="Hello, world" />
+  <Head title={title} description={description} />
   <body class="bg-background flex min-h-screen flex-col font-mono text-white">
     <Navbar />
     <div class="flex-1">
