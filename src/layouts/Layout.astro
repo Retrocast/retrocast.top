@@ -1,11 +1,17 @@
 ---
 import Head from '../components/Head.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <!doctype html>
 <html lang="en">
   <Head title="Test" description="Hello, world" />
-  <body class="flex min-h-screen bg-[#1f0034] font-mono text-white">
-    <slot />
+  <body class="bg-background flex min-h-screen flex-col font-mono text-white">
+    <Navbar />
+    <div class="flex-1">
+      <div class="mx-auto w-full max-w-screen-lg px-4 py-6">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
