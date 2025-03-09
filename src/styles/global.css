@@ -1,2 +1,6 @@
 @import 'tailwindcss';
-@config '../../tailwind.config.mjs';
+
+@theme {
+  --color-primary: #9900ff;
+  --color-background: #180028;
+}
