@@ -4,6 +4,7 @@ export interface Props {
   description: string;
 }
 const { title, description } = Astro.props;
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 ---
 
@@ -23,4 +24,5 @@ import '../styles/global.css';
   <meta property="og:description" content={description} />
   <meta name="referrer" content="no-referrer" />
   <meta name="author" content="Retrocast" />
+  <ClientRouter />
 </head>
