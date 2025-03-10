@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 import expressiveCode from 'astro-expressive-code';
+import theme from './src/styles/code-theme.json';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,5 +20,5 @@ export default defineConfig({
     contentIntellisense: true
   },
 
-  integrations: [expressiveCode()]
+  integrations: [expressiveCode({ themes: [theme] })]
 });
