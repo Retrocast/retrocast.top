@@ -1,0 +1,35 @@
+---
+import type { InferEntrySchema } from 'astro:content';
+import Layout from './Layout.astro';
+
+export interface Props {
+  post: InferEntrySchema<'posts'>;
+}
+const { post } = Astro.props;
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+let date = formatDate(post.date);
+---
+
+<Layout title={`${post.title} | Retrocast's blog`} description={post.description}>
+  <div class="mx-auto w-full max-w-screen-lg px-4 py-6">
+    <div class="flex flex-col items-center">
+      <p class="px-14 pt-6 pb-4 text-center text-4xl font-bold">{post.title}</p>
+      <p class="text-sm text-gray-400">
+        <span>Posted on {date}</span>
+      </p>
+    </div>
+  </div>
+  <div
+    class="prose prose-invert prose-a:hover:text-primary prose-img:rounded-lg prose-img:shadow-primary/30 prose-img:shadow-xl max-w-none text-base text-white"
+  >
+    <slot />
+  </div>
+</Layout>
