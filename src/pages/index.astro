@@ -1,5 +1,9 @@
 ---
+import PostList from '../components/PostList.astro';
+import { getBlogPosts } from '../content.config';
 import Layout from '../layouts/Layout.astro';
+
+const posts = (await getBlogPosts()).slice(0, 3);
 ---
 
 <Layout title="Retrocast" description="Hello, world!">
@@ -18,5 +22,12 @@ import Layout from '../layouts/Layout.astro';
       > (I'm admin on there btw), this site is under construction and may stay that way for unknown amount
       of time.
     </p>
+  </div>
+  <div class="flex justify-between pt-7 pb-4">
+    <p class="text-xl font-bold">Latest blog posts</p>
+    <a href="/blog/" class="hover:text-primary underline">all posts →</a>
+  </div>
+  <div class="flex flex-col pb-4 md:flex-row">
+    <PostList {posts} />
   </div>
 </Layout>
