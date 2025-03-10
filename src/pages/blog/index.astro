@@ -1,5 +1,17 @@
 ---
+import PostList from '../../components/PostList.astro';
 import Layout from '../../layouts/Layout.astro';
+import { getBlogPosts } from '../../content.config';
+
+const posts = await getBlogPosts();
 ---
 
-<Layout title="Retrocast's blog" description="List of blog posts">TODO: put blog here</Layout>
+<Layout title="Retrocast's blog" description="List of blog posts">
+  <div class="mx-auto w-full max-w-screen-lg">
+    <p class="px-14 pt-6 pb-4 text-center text-4xl font-bold">List of blog posts</p>
+  </div>
+  <div class="mx-auto w-full max-w-screen-lg px-4 py-6">
+    <p class="pb-2">TODO: improve blog</p>
+    <PostList {posts} />
+  </div>
+</Layout>

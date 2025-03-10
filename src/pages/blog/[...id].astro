@@ -19,6 +19,6 @@ const entry = await getEntry('posts', post.id)!;
 const { Content } = await render(entry);
 ---
 
-<BlogPost post={post.data}>
+<BlogPost post={post}>
   <Content />
 </BlogPost>

@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, getCollection, z, type CollectionEntry } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const posts = defineCollection({
@@ -12,3 +12,11 @@ const posts = defineCollection({
 });
 
 export const collections = { posts };
+export type BlogPost = CollectionEntry<'posts'>;
+export async function getBlogPosts(
+  filter: (x: BlogPost) => boolean = (_) => true
+): Promise<BlogPost[]> {
+  return (await getCollection('posts'))
+    .filter((x) => x && filter(x))
+    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime());
+}
