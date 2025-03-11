@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import { formatDate } from '../utils/blog';
 import type { BlogPost } from '../content.config';
+import Title from '../components/Title.astro';
 
 export interface Props {
   post: BlogPost;
@@ -12,14 +13,10 @@ let date = formatDate(post.data.date);
 ---
 
 <Layout title={`${post.data.title} | Retrocast's blog`} description={post.data.description}>
-  <div class="mx-auto w-full max-w-screen-lg pb-6">
-    <div class="flex flex-col items-center">
-      <p class="px-14 pt-6 pb-4 text-center text-4xl font-bold">{post.data.title}</p>
-      <p class="text-sm text-gray-400">
-        <span>Posted on {date}</span>
-      </p>
-    </div>
-  </div>
+  <Title>{post.data.title}</Title>
+  <p class="pb-6 text-center text-sm text-gray-400">
+    Posted on {date}
+  </p>
   <div
     class="prose prose-figcaption:text-center prose-a:no-underline prose-img:mx-auto prose-headings:m-1 prose-invert prose-img:rounded-lg prose-img:shadow-primary/30 prose-img:shadow-xl max-w-none text-base text-white"
   >
