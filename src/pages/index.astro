@@ -10,22 +10,20 @@ const posts = (await getBlogPosts()).slice(0, 3);
   <p class="pt-6 pb-2 text-4xl font-bold">Hello, world!</p>
   <div class="text-sm">
     <p class="pb-4">
-      I'm <b class="text-primary">Retrocast</b> (<b class="text-primary">she/they</b>) and this is
-      my website/blog. And I guess that's it.
+      I'm <b>Retrocast</b> (<b>she/they</b>) and this is my website/blog. And I guess that's it.
     </p>
     <p>
       Just like the <a
         href="https://inscryption.fandom.com/"
         target="_blank"
-        rel="external noreferrer"
-        class="hover:text-primary underline">Inscryption Wiki</a
+        rel="external noreferrer">Inscryption Wiki</a
       > (I'm admin on there btw), this site is under construction and may stay that way for unknown amount
       of time.
     </p>
   </div>
   <div class="flex justify-between pt-7 pb-4">
     <p class="text-xl font-bold">Latest blog posts</p>
-    <a href="/blog/" class="hover:text-primary underline">all posts →</a>
+    <a href="/blog/">all posts →</a>
   </div>
   <div class="pb-4">
     <PostList {posts} />

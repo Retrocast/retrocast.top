@@ -5,3 +5,7 @@
   --color-primary: #9900ff;
   --color-background: #180028;
 }
+
+a:not(.no-def-link) {
+  @apply text-primary transition duration-200 ease-out hover:underline hover:opacity-55;
+}
