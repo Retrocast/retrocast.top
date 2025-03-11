@@ -10,6 +10,7 @@ import mdx from '@astrojs/mdx';
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,6 +37,13 @@ export default defineConfig({
             type: 'text',
             value: '#'
           }
+        }
+      ],
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['external', 'noreferrer']
         }
       ]
     ]
