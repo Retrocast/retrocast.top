@@ -1,17 +1,38 @@
 ---
-
+const LINKS = [
+  { title: 'HOME', href: '/' },
+  { title: 'BLOG', href: '/blog/' }
+];
 ---
 
 <div class="mx-auto w-full max-w-screen-lg px-4 py-6">
   <div class="flex justify-between">
     <div class="text-3xl font-bold">
-      <a href="/" class="no-def-link">Retrocast<span class="text-gray-500">.top</span></a>
+      <a href="/" class="no-def-link">Retrocast<span class="opacity-20">.top</span></a>
     </div>
     <div class="flex items-center">
       <nav>
-        <ul class="hidden flex-row sm:flex">
-          <!-- If there are >1 entries, all but last one should also have margin mr-3 -->
-          <li><a href="/blog/" class="no-def-link hover:text-primary">BLOG</a></li>
+        <ul class="flex flex-col flex-wrap min-[400px]:flex-row min-[400px]:gap-2">
+          {
+            LINKS.map((x) => (
+              <li>
+                <a
+                  href={x.href}
+                  class={
+                    (
+                      x.href == '/'
+                        ? x.href == Astro.url.pathname
+                        : Astro.url.pathname.includes(x.href)
+                    )
+                      ? 'font-extrabold underline'
+                      : ''
+                  }
+                >
+                  {x.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
     </div>
