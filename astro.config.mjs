@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 import expressiveCode from 'astro-expressive-code';
 import theme from './src/styles/code-theme.json';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://retrocast.top/',
@@ -20,5 +22,5 @@ export default defineConfig({
     contentIntellisense: true
   },
 
-  integrations: [expressiveCode({ themes: [theme] })]
+  integrations: [expressiveCode({ themes: [theme] }), mdx()]
 });

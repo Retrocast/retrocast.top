@@ -2,7 +2,7 @@ import { defineCollection, getCollection, z, type CollectionEntry } from 'astro:
 import { glob } from 'astro/loaders';
 
 const posts = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/blog/posts' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/blog/posts' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
