@@ -28,7 +28,7 @@ import '../styles/global.css';
   {
     import.meta.env.PROD && (
       <>
-        <script type="application/javascript" is:inline>
+        <script is:inline>
           window.goatcounter = {no_onload: true};
           document.addEventListener("astro:page-load", () => window.goatcounter.count());
         </script>
