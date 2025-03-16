@@ -27,11 +27,17 @@ import '../styles/global.css';
   <ClientRouter />
   {
     import.meta.env.PROD && (
-      <script
-        data-goatcounter="https://retrocast.goatcounter.com/count"
-        async
-        src="//gc.zgo.at/count.js"
-      />
+      <>
+        <script type="application/javascript" is:inline>
+          window.goatcounter = {no_onload: true};
+          document.addEventListener("astro:page-load", () => window.goatcounter.count());
+        </script>
+        <script
+          data-goatcounter="https://retrocast.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        />
+      </>
     )
   }
 </head>
