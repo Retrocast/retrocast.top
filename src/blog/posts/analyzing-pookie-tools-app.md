@@ -15,7 +15,8 @@ _"Well, let's begin"_, I said, as I opened Aurora Store on my phone and typed _"
 And of course, I got no results, because the app is iOS-only. Who even makes iOS-only apps? That's a _total misplay_!
 
 Checking the App Store page revealed that the app was made by _Vego Pictures L.L.C._.
-A quick [DuckDuckGo search](https://duckduckgo.com/?q=Vego+Pictures+L.L.C.&ia=web) showed that their `vegopictures.com` website had expired and was originally hosted on Squarespace. A tech company with a broken website hosted on a website builder? Seems like a red flag to me.
+A quick [DuckDuckGo search](https://duckduckgo.com/?q=Vego+Pictures+L.L.C.&ia=web) showed that their `vegopictures.com` website had expired and was originally hosted on Squarespace.
+A tech company with a broken website hosted on a website builder? Seems like a red flag to me.
 
 The only other app developed by them is _Ultimate AI_, which looks like yet another UI for the OpenAI API.
 To be perfectly honest, even _this_ app seems like a UI for the OpenAI API (_foreshadowing????_).
@@ -23,7 +24,7 @@ To be perfectly honest, even _this_ app seems like a UI for the OpenAI API (_for
 Anyway, since I don't have an Apple device, I had to visit some of the sketchiest websites known to mankind to obtain the `.ipa` file, which is just a ~~glorified~~ normal `.zip` archive.
 But in the end, I managed to get it.
 
-## Analysis
+# Analysis
 
 First, a disclaimer.
 **This is my first time working with iOS apps (I usually deal with Android), so someone way more professional, like [Bryce Bostwick](https://bryce.co/), could probably do what I did in two minutes, with their eyes closed, and in a much less barbaric way.**
@@ -32,14 +33,14 @@ Alright, we're in.
 Let's start with something simple to test the waters.
 
 ```ansi title="Bash"
-[01;32m[/tmp/garbage] [34m$[00m [32mstrings[00m [04;32m/Payload/Runner.app/Frameworks/App.framework/App[00m [34m|[00m [32mrg[00m -i openai
+[01;32m[/tmp/garbage] [34m$[00m [32mstrings[00m [04;32mPayload/Runner.app/Frameworks/App.framework/App[00m [34m|[00m [32mrg[00m -i openai
 https://api.[31mopenai[0m.com/v1
 https://api.[31mopenai[0m.com/v1/
 ```
 
 **GOTTEM.**
 I was right, the app is a mere wrapper for OpenAI API.
-As you're reading this, I'm probably using API key stolen from them to make AI play _Inscryption_.
+As you're reading this, I'm probably using the API key stolen from them to make AI play _Inscryption_.
 That's the price they should pay for not bothering to build a proper backend (and for being affiliated with one of the cringiest memes in existence).
 
 They're actually very lucky that the app is iOS-only and no one gives a fuck about it. Otherwise, the API key would've been stolen the day they released it.
@@ -80,7 +81,7 @@ If, for some reason, you want to see the _terrible_ prompt engineering behind th
 
 Time to release a **free, libre, open-source Android port** of this app! /j
 
-## Afterword
+# Afterword
 
 At the beginning of the post I actually thought app was free to use with additional features in premium subscription, but no.
 App simply doesn't work unless you pay for weekly ($5/$7) or annual ($40/$50) subscription.
@@ -93,7 +94,7 @@ Or, if you have some spare money, pay $5+ for an actual OpenAI API and get coupl
 But actually, why would anyone do this at all, regardless of the "client" used?
 Isn't the whole purpose of "dating" to find someone **you** love?
 **YOU**, not some soulless program spitting out random-ish responses.
-Do people who use AI for dating really expect something decent from it, if they don't even have enough respect to give human answers to their potential partner?
+Do people who use AI for dating really expect something decent from it, if they don't even have enough respect to give human responses to their potential partner?
 
 Or maybe I just don't understand something. I'm ace, after all. **XD**
 
